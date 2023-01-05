@@ -11,9 +11,13 @@ import { RoomsComponent } from './rooms/rooms.component';
 const routes: Routes = [
   {path: 'employee', component: EmployeeComponent, canActivate: [LoginGuard] },
   {path: 'login', component: LoginComponent},
-  {path: 'rooms', loadChildren: () => import('./rooms/rooms.module').then((m) => m.RoomsModule), canActivate: [LoginGuard], canLoad: [LoginGuard]},
+  {path: 'rooms', loadChildren: () => import('./rooms/rooms.module').then((m) => m.RoomsModule),
+   //canActivate: [LoginGuard], canLoad: [LoginGuard]
+  },
   {path: '', redirectTo:'/login', pathMatch: 'full'},
-  { path: 'booking', loadChildren: () => import('./booking/booking.module').then(m => m.BookingModule), canActivate: [LoginGuard] },
+  { path: 'booking', loadChildren: () => import('./booking/booking.module').then(m => m.BookingModule), 
+  //  canActivate: [LoginGuard] 
+},
   {path:'**', component:NotfoundComponent,}
 ];
 
